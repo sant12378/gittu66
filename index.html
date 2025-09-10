@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTools Pro - Ultimate Multi-Tool Platform</title>
+    <meta name="description" content="The ultimate collection of online tools for productivity, development, image processing, and more. All-in-one platform for your daily needs.">
+    <meta name="keywords" content="online tools, calculator, converter, image tools, developer tools, productivity">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2575fc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SuperTools Pro">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛠️%3C/text%3E%3C/svg%3E">
+    
+    <!-- External Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner">
+            <i class="fas fa-tools"></i>
+        </div>
+        <p>Loading SuperTools Pro...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-tools"></i>
+                <span>SuperTools Pro</span>
+            </div>
+            
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" id="search-tools" placeholder="Search tools...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-th"></i> All Tools
+                </button>
+                <button class="filter-btn" data-category="calculators">
+                    <i class="fas fa-calculator"></i> Calculators
+                </button>
+                <button class="filter-btn" data-category="converters">
+                    <i class="fas fa-exchange-alt"></i> Converters
+                </button>
+                <button class="filter-btn" data-category="generators">
+                    <i class="fas fa-magic"></i> Generators
+                </button>
+                <button class="filter-btn" data-category="image">
+                    <i class="fas fa-image"></i> Image Tools
+                </button>
+                <button class="filter-btn" data-category="text">
+                    <i class="fas fa-font"></i> Text Tools
+                </button>
+                <button class="filter-btn" data-category="developer">
+                    <i class="fas fa-code"></i> Developer
+                </button>
+                <button class="filter-btn" data-category="utility">
+                    <i class="fas fa-wrench"></i> Utilities
+                </button>
+            </div>
+            
+            <!-- Ad Space 1 - Banner 160x300 -->
+            <div class="ad-container ad-sidebar">
+                <p class="ad-label">Advertisement</p>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '184cc54635c0cce34aa016c4b0fc9523',
+                        'format' : 'iframe',
+                        'height' : 300,
+                        'width' : 160,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/184cc54635c0cce34aa016c4b0fc9523/invoke.js"></script>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <header class="hero-section">
+                <div class="hero-content">
+                    <h1>
+                        <i class="fas fa-tools hero-icon"></i>
+                        SuperTools Pro
+                    </h1>
+                    <p>Your ultimate collection of professional online tools for productivity, development, and creativity</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Tools Available</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free & Secure</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">PWA</span>
+                            <span class="stat-label">Offline Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Ad Space 2 - Banner 468x60 -->
+            <div class="ad-container ad-top-banner">
+                <p class="ad-label">Advertisement</p>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'c01edf1cdc8676a99305f280e30447d4',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/c01edf1cdc8676a99305f280e30447d4/invoke.js"></script>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools-container">
+                <div class="tools-grid" id="tools-grid">
+                    
+                    <!-- CALCULATORS CATEGORY -->
+                    
+                    <!-- BMI Calculator -->
+                    <div class="tool-card" data-category="calculators">
+                        <div class="tool-header">
+                            <i class="fas fa-weight"></i>
+                            <h3>BMI Calculator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="bmi-height">Height (cm)</label>
+                                <input type="number" id="bmi-height" placeholder="Enter your height" min="1" max="300">
+                            </div>
+                            <div class="input-group">
+                                <label for="bmi-weight">Weight (kg)</label>
+                                <input type="number" id="bmi-weight" placeholder="Enter your weight" min="1" max="500">
+                            </div>
+                            <button class="tool-btn" id="calculate-bmi">Calculate BMI</button>
+                            <div class="result" id="bmi-result">Your BMI will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Age Calculator -->
+                    <div class="tool-card" data-category="calculators">
+                        <div class="tool-header">
+                            <i class="fas fa-birthday-cake"></i>
+                            <h3>Age Calculator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="birthdate">Your Birthdate</label>
+                                <input type="date" id="birthdate">
+                            </div>
+                            <button class="tool-btn" id="calculate-age">Calculate Age</button>
+                            <div class="result" id="age-result">Your age will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- SIP Calculator -->
+                    <div class="tool-card" data-category="calculators">
+                        <div class="tool-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>SIP Calculator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="sip-amount">Monthly Investment (₹)</label>
+                                <input type="number" id="sip-amount" placeholder="e.g., 5000" min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="investment-period">Investment Period (Years)</label>
+                                <input type="number" id="investment-period" placeholder="e.g., 10" min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="expected-return">Expected Annual Return (%)</label>
+                                <input type="number" id="expected-return" placeholder="e.g., 12" min="1" max="100">
+                            </div>
+                            <button class="tool-btn" id="calculate-sip">Calculate SIP</button>
+                            <div class="result" id="sip-result">SIP result will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Percentage Calculator -->
+                    <div class="tool-card" data-category="calculators">
+                        <div class="tool-header">
+                            <i class="fas fa-percent"></i>
+                            <h3>Percentage Calculator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="percentage-value">Value</label>
+                                <input type="number" id="percentage-value" placeholder="Enter value">
+                            </div>
+                            <div class="input-group">
+                                <label for="percentage-total">Total</label>
+                                <input type="number" id="percentage-total" placeholder="Enter total">
+                            </div>
+                            <button class="tool-btn" id="calculate-percentage">Calculate Percentage</button>
+                            <div class="result" id="percentage-result">Percentage will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- CONVERTERS CATEGORY -->
+                    
+                    <!-- Currency Converter -->
+                    <div class="tool-card" data-category="converters">
+                        <div class="tool-header">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h3>Currency Converter</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="currency-amount">Amount</label>
+                                <input type="number" id="currency-amount" placeholder="Enter amount" value="1" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="from-currency">From</label>
+                                <select id="from-currency">
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="INR" selected>INR - Indian Rupee</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="to-currency">To</label>
+                                <select id="to-currency">
+                                    <option value="USD" selected>USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                </select>
+                            </div>
+                            <button class="tool-btn" id="convert-currency">Convert</button>
+                            <div class="result" id="currency-result">Converted amount will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Number to Words -->
+                    <div class="tool-card" data-category="converters">
+                        <div class="tool-header">
+                            <i class="fas fa-language"></i>
+                            <h3>Number to Words</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="number-input">Enter a Number</label>
+                                <input type="number" id="number-input" placeholder="Enter a number">
+                            </div>
+                            <button class="tool-btn" id="convert-number">Convert to Words</button>
+                            <div class="result" id="words-result">Words will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Unit Converter -->
+                    <div class="tool-card" data-category="converters">
+                        <div class="tool-header">
+                            <i class="fas fa-ruler"></i>
+                            <h3>Unit Converter</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="unit-type">Unit Type</label>
+                                <select id="unit-type">
+                                    <option value="length">Length</option>
+                                    <option value="weight">Weight</option>
+                                    <option value="temperature">Temperature</option>
+                                    <option value="area">Area</option>
+                                    <option value="volume">Volume</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="unit-value">Value</label>
+                                <input type="number" id="unit-value" placeholder="Enter value">
+                            </div>
+                            <div class="input-group">
+                                <label for="unit-from">From</label>
+                                <select id="unit-from"></select>
+                            </div>
+                            <div class="input-group">
+                                <label for="unit-to">To</label>
+                                <select id="unit-to"></select>
+                            </div>
+                            <button class="tool-btn" id="convert-unit">Convert</button>
+                            <div class="result" id="unit-result">Converted value will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- GENERATORS CATEGORY -->
+                    
+                    <!-- Password Generator -->
+                    <div class="tool-card" data-category="generators">
+                        <div class="tool-header">
+                            <i class="fas fa-key"></i>
+                            <h3>Password Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="password-length">Password Length</label>
+                                <input type="number" id="password-length" min="8" max="128" value="16">
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="uppercase" checked>
+                                    <span class="checkmark"></span>
+                                    Include Uppercase Letters
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="lowercase" checked>
+                                    <span class="checkmark"></span>
+                                    Include Lowercase Letters
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="numbers" checked>
+                                    <span class="checkmark"></span>
+                                    Include Numbers
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="symbols">
+                                    <span class="checkmark"></span>
+                                    Include Symbols
+                                </label>
+                            </div>
+                            <button class="tool-btn" id="generate-password">Generate Password</button>
+                            <div class="result" id="password-result">
+                                <div class="password-output"></div>
+                                <button class="copy-btn" id="copy-password" style="display: none;">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QR Code Generator -->
+                    <div class="tool-card" data-category="generators">
+                        <div class="tool-header">
+                            <i class="fas fa-qrcode"></i>
+                            <h3>QR Code Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="qr-text">Text or URL</label>
+                                <textarea id="qr-text" rows="3" placeholder="Enter text or URL to generate QR code"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <label for="qr-size">Size</label>
+                                <select id="qr-size">
+                                    <option value="200">200x200</option>
+                                    <option value="300" selected>300x300</option>
+                                    <option value="400">400x400</option>
+                                    <option value="500">500x500</option>
+                                </select>
+                            </div>
+                            <button class="tool-btn" id="generate-qr">Generate QR Code</button>
+                            <div class="result" id="qr-result">
+                                <div id="qr-canvas-container"></div>
+                                <button class="download-btn" id="download-qr" style="display: none;">
+                                    <i class="fas fa-download"></i> Download QR Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Palette Generator -->
+                    <div class="tool-card" data-category="generators">
+                        <div class="tool-header">
+                            <i class="fas fa-palette"></i>
+                            <h3>Color Code Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="color-picker">Select a Color</label>
+                                <input type="color" id="color-picker" value="#2575fc">
+                            </div>
+                            <div class="input-group">
+                                <label for="color-format">Color Format</label>
+                                <select id="color-format">
+                                    <option value="hex">HEX</option>
+                                    <option value="rgb">RGB</option>
+                                    <option value="hsl">HSL</option>
+                                    <option value="all">All Formats</option>
+                                </select>
+                            </div>
+                            <button class="tool-btn" id="generate-color-code">Generate Color Code</button>
+                            <div class="result" id="color-result">
+                                <div class="color-preview"></div>
+                                <div class="color-codes"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE TOOLS CATEGORY -->
+                    
+                    <!-- Image Compressor -->
+                    <div class="tool-card" data-category="image">
+                        <div class="tool-header">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <h3>Image Compressor</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="compress-file">Select Image</label>
+                                <input type="file" id="compress-file" accept="image/*">
+                            </div>
+                            <div class="input-group">
+                                <label for="compress-quality">Quality: <span id="quality-value">80%</span></label>
+                                <input type="range" id="compress-quality" min="10" max="100" value="80" class="slider">
+                            </div>
+                            <button class="tool-btn" id="compress-image">Compress Image</button>
+                            <div class="result" id="compress-result">
+                                <div class="image-preview" id="compress-preview"></div>
+                                <div class="compression-stats" id="compression-stats"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Resizer -->
+                    <div class="tool-card" data-category="image">
+                        <div class="tool-header">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <h3>Image Resizer</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="resize-file">Select Image</label>
+                                <input type="file" id="resize-file" accept="image/*">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="resize-width">Width (px)</label>
+                                    <input type="number" id="resize-width" placeholder="Width">
+                                </div>
+                                <div class="input-group">
+                                    <label for="resize-height">Height (px)</label>
+                                    <input type="number" id="resize-height" placeholder="Height">
+                                </div>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="maintain-aspect" checked>
+                                    <span class="checkmark"></span>
+                                    Maintain Aspect Ratio
+                                </label>
+                            </div>
+                            <button class="tool-btn" id="resize-image">Resize Image</button>
+                            <div class="result" id="resize-result">
+                                <div class="image-preview" id="resize-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Format Converter -->
+                    <div class="tool-card" data-category="image">
+                        <div class="tool-header">
+                            <i class="fas fa-file-image"></i>
+                            <h3>Format Converter</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="format-file">Select Image</label>
+                                <input type="file" id="format-file" accept="image/*">
+                            </div>
+                            <div class="input-group">
+                                <label for="output-format">Convert To</label>
+                                <select id="output-format">
+                                    <option value="jpeg">JPEG</option>
+                                    <option value="png">PNG</option>
+                                    <option value="webp">WebP</option>
+                                </select>
+                            </div>
+                            <button class="tool-btn" id="convert-format">Convert Format</button>
+                            <div class="result" id="format-result">
+                                <div class="image-preview" id="format-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXT TOOLS CATEGORY -->
+                    
+                    <!-- Word Counter -->
+                    <div class="tool-card" data-category="text">
+                        <div class="tool-header">
+                            <i class="fas fa-font"></i>
+                            <h3>Text Analyzer</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="text-input">Enter your text</label>
+                                <textarea id="text-input" rows="5" placeholder="Type or paste your text here"></textarea>
+                            </div>
+                            <div class="result" id="text-stats">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Words:</span>
+                                        <span class="stat-value" id="word-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Characters:</span>
+                                        <span class="stat-value" id="char-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Characters (no spaces):</span>
+                                        <span class="stat-value" id="char-no-space-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Sentences:</span>
+                                        <span class="stat-value" id="sentence-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Paragraphs:</span>
+                                        <span class="stat-value" id="paragraph-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Reading Time:</span>
+                                        <span class="stat-value" id="reading-time">0 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Case Converter -->
+                    <div class="tool-card" data-category="text">
+                        <div class="tool-header">
+                            <i class="fas fa-text-height"></i>
+                            <h3>Text Case Converter</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="case-text">Enter text to convert</label>
+                                <textarea id="case-text" rows="4" placeholder="Enter text to convert case"></textarea>
+                            </div>
+                            <div class="button-group">
+                                <button class="tool-btn small" id="uppercase-btn">UPPERCASE</button>
+                                <button class="tool-btn small" id="lowercase-btn">lowercase</button>
+                                <button class="tool-btn small" id="capitalize-btn">Capitalize</button>
+                                <button class="tool-btn small" id="title-case-btn">Title Case</button>
+                                <button class="tool-btn small" id="sentence-case-btn">Sentence case</button>
+                            </div>
+                            <div class="result" id="case-result">Converted text will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- DEVELOPER TOOLS CATEGORY -->
+                    
+                    <!-- Base64 Encoder/Decoder -->
+                    <div class="tool-card" data-category="developer">
+                        <div class="tool-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Base64 Encoder/Decoder</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tab-container">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" data-tab="encode">Encode</button>
+                                    <button class="tab-btn" data-tab="decode">Decode</button>
+                                </div>
+                                <div class="tab-content active" id="encode-tab">
+                                    <div class="input-group">
+                                        <label for="base64-input">Text to Encode</label>
+                                        <textarea id="base64-input" rows="4" placeholder="Enter text to encode"></textarea>
+                                    </div>
+                                    <button class="tool-btn" id="encode-base64">Encode to Base64</button>
+                                    <div class="result" id="base64-encoded">Encoded result will appear here</div>
+                                </div>
+                                <div class="tab-content" id="decode-tab">
+                                    <div class="input-group">
+                                        <label for="base64-decode-input">Base64 to Decode</label>
+                                        <textarea id="base64-decode-input" rows="4" placeholder="Enter base64 to decode"></textarea>
+                                    </div>
+                                    <button class="tool-btn" id="decode-base64">Decode from Base64</button>
+                                    <div class="result" id="base64-decoded">Decoded result will appear here</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- URL Encoder/Decoder -->
+                    <div class="tool-card" data-category="developer">
+                        <div class="tool-header">
+                            <i class="fas fa-link"></i>
+                            <h3>URL Encoder/Decoder</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tab-container">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" data-tab="url-encode">Encode</button>
+                                    <button class="tab-btn" data-tab="url-decode">Decode</button>
+                                </div>
+                                <div class="tab-content active" id="url-encode-tab">
+                                    <div class="input-group">
+                                        <label for="url-input">URL to Encode</label>
+                                        <textarea id="url-input" rows="3" placeholder="Enter URL to encode"></textarea>
+                                    </div>
+                                    <button class="tool-btn" id="encode-url">Encode URL</button>
+                                    <div class="result" id="url-encoded">Encoded URL will appear here</div>
+                                </div>
+                                <div class="tab-content" id="url-decode-tab">
+                                    <div class="input-group">
+                                        <label for="url-decode-input">URL to Decode</label>
+                                        <textarea id="url-decode-input" rows="3" placeholder="Enter URL to decode"></textarea>
+                                    </div>
+                                    <button class="tool-btn" id="decode-url">Decode URL</button>
+                                    <div class="result" id="url-decoded">Decoded URL will appear here</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JSON Formatter -->
+                    <div class="tool-card" data-category="developer">
+                        <div class="tool-header">
+                            <i class="fas fa-brackets-curly"></i>
+                            <h3>JSON Formatter</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="json-input">JSON to Format</label>
+                                <textarea id="json-input" rows="6" placeholder="Paste JSON here to format and validate"></textarea>
+                            </div>
+                            <div class="button-group">
+                                <button class="tool-btn small" id="format-json">Format</button>
+                                <button class="tool-btn small" id="minify-json">Minify</button>
+                                <button class="tool-btn small" id="validate-json">Validate</button>
+                            </div>
+                            <div class="result" id="json-result">
+                                <div id="json-status"></div>
+                                <textarea id="json-output" rows="6" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hash Generator -->
+                    <div class="tool-card" data-category="developer">
+                        <div class="tool-header">
+                            <i class="fas fa-hashtag"></i>
+                            <h3>Hash Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="hash-input">Text to Hash</label>
+                                <textarea id="hash-input" rows="3" placeholder="Enter text to generate hash"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <label for="hash-algorithm">Hash Algorithm</label>
+                                <select id="hash-algorithm">
+                                    <option value="md5">MD5</option>
+                                    <option value="sha1">SHA-1</option>
+                                    <option value="sha256" selected>SHA-256</option>
+                                    <option value="sha512">SHA-512</option>
+                                </select>
+                            </div>
+                            <button class="tool-btn" id="generate-hash">Generate Hash</button>
+                            <div class="result" id="hash-result">Hash will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- UTILITY TOOLS CATEGORY -->
+                    
+                    <!-- YouTube Thumbnail Downloader -->
+                    <div class="tool-card" data-category="utility">
+                        <div class="tool-header">
+                            <i class="fab fa-youtube"></i>
+                            <h3>YouTube Thumbnail</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="youtube-url">YouTube Video URL</label>
+                                <input type="url" id="youtube-url" placeholder="https://www.youtube.com/watch?v=...">
+                            </div>
+                            <button class="tool-btn" id="get-thumbnail">Get Thumbnails</button>
+                            <div class="result" id="thumbnail-result">Thumbnails will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Policy Generator -->
+                    <div class="tool-card" data-category="utility">
+                        <div class="tool-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Privacy Policy Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-group">
+                                <label for="company-name">Company/App Name</label>
+                                <input type="text" id="company-name" placeholder="Enter your company/app name">
+                            </div>
+                            <div class="input-group">
+                                <label for="website-url">Website URL</label>
+                                <input type="url" id="website-url" placeholder="Enter your website URL">
+                            </div>
+                            <div class="input-group">
+                                <label for="contact-email">Contact Email</label>
+                                <input type="email" id="contact-email" placeholder="Enter contact email">
+                            </div>
+                            <button class="tool-btn" id="generate-policy">Generate Privacy Policy</button>
+                            <div class="result" id="policy-result">Privacy policy will appear here</div>
+                        </div>
+                    </div>
+
+                    <!-- Random Number Generator -->
+                    <div class="tool-card" data-category="utility">
+                        <div class="tool-header">
+                            <i class="fas fa-dice"></i>
+                            <h3>Random Number Generator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="random-min">Minimum</label>
+                                    <input type="number" id="random-min" value="1">
+                                </div>
+                                <div class="input-group">
+                                    <label for="random-max">Maximum</label>
+                                    <input type="number" id="random-max" value="100">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="random-count">Count</label>
+                                <input type="number" id="random-count" value="1" min="1" max="100">
+                            </div>
+                            <button class="tool-btn" id="generate-random">Generate Numbers</button>
+                            <div class="result" id="random-result">Random numbers will appear here</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Ad Space 3 - Native Banner -->
+                <div class="ad-container ad-bottom">
+                    <p class="ad-label">Advertisement</p>
+                    <script async="async" data-cfasync="false" src="//pl25691667.revenuecpmgate.com/2ad07d6142a611344b0609862062b6d9/invoke.js"></script>
+                    <div id="container-2ad07d6142a611344b0609862062b6d9"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Install PWA Prompt -->
+    <div id="install-prompt" class="install-prompt" style="display: none;">
+        <div class="install-content">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Install SuperTools Pro</h3>
+            <p>Get quick access to all tools with our Progressive Web App</p>
+            <div class="install-buttons">
+                <button id="install-btn" class="install-yes">Install</button>
+                <button id="install-dismiss" class="install-no">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SuperTools Pro</h4>
+                <p>The ultimate collection of online tools for productivity and development.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>50+ Professional Tools</li>
+                    <li>Offline PWA Support</li>
+                    <li>No Registration Required</li>
+                    <li>100% Free & Secure</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li>Calculators & Converters</li>
+                    <li>Image Processing Tools</li>
+                    <li>Developer Utilities</li>
+                    <li>Text & Content Tools</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SuperTools Pro. All rights reserved. | Privacy-first, secure tools for everyone.</p>
+        </div>
+    </footer>
+
+    <script src="js/crypto-js.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
